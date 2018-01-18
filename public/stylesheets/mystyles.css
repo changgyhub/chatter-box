@@ -1,0 +1,333 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 50px;
+    font: 14px "Lucida Console", Monaco, monospace;
+}
+
+.header {
+    z-index: 0;
+    background-color: #004712;
+    height: 15%;
+    min-height: 40pt;
+}
+
+.header img {
+    z-index: 1;
+    position: relative;
+    float: left;
+    width: 50px;
+    height: 50px;
+    margin: 0 10px;
+}
+
+.header span {
+    z-index: 1;
+    position: relative;
+    float: left;
+    color: white;
+    margin: 10px 10px;
+    font-size: 16px;
+}
+
+.header button {
+    z-index: 1;
+    position: relative;
+    float: right;
+    font-family: inherit;
+    background-color: white;
+    border: none;
+    color: #004712;
+    padding: 6px 6px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 10px 10px;
+    -webkit-transition-duration: 0.4s;
+    /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.header h1 {
+    z-index: 0;
+    color: #ffffff;
+    margin: 0;
+    font-size: 24px;
+    text-align: center;
+    position: relative;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.login-box {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: auto;
+    margin-bottom: auto;
+    text-align: center;
+    background-color: #e8ffdd;
+}
+
+.login-box button {
+    font-family: inherit;
+    background-color: #004712;
+    border: none;
+    color: white;
+    padding: 6px 6px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 2px 2px;
+    -webkit-transition-duration: 0.4s;
+    /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.login-box input {
+    font-family: inherit;
+    background-color: white;
+    border: none;
+    color: black;
+    padding: 6px 6px;
+    display: inline-block;
+    font-size: 14px;
+    margin: 10px 10px;
+    -webkit-transition-duration: 0.4s;
+    /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.login-box div span {
+    color: red;
+}
+
+.login-box label {
+    display: inline-block;
+    width: 75px;
+    text-align: right;
+}
+
+.friend-panel {
+    height: 85%;
+    width: 25%;
+    float: left;
+    background-color: #ddffcc;
+}
+
+.friend-panel h2 {
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 16px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    background-color: #8bba68;
+    color: white;
+}
+
+.friend-panel div span {
+    margin-top: auto;
+    margin-bottom: auto;
+    text-align: center;
+    display: block;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 16px;
+}
+
+.main-panel {
+    height: 85%;
+    width: 75%;
+    float: left;
+    margin-top: auto;
+    margin-bottom: auto;
+    background-color: #f1ffea;
+}
+
+.user-info {
+    text-align: center;
+    padding-top: 30px;
+}
+
+.user-info button {
+    font-family: inherit;
+    background-color: #004712;
+    border: none;
+    color: white;
+    padding: 6px 6px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 2px 2px;
+    -webkit-transition-duration: 0.4s;
+    /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.user-info input {
+    font-family: inherit;
+    background-color: white;
+    border: none;
+    color: black;
+    padding: 6px 6px;
+    display: inline-block;
+    font-size: 14px;
+    margin: 10px 10px;
+    -webkit-transition-duration: 0.4s;
+    /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.user-info div span {
+    color: red;
+}
+
+.user-info label {
+    display: inline-block;
+    width: 150px;
+    text-align: right;
+}
+
+.chat-box img {
+    position: relative;
+    float: left;
+    width: 50px;
+    height: 50px;
+    margin: 0 10px;
+}
+
+.chat-box-panel {
+    border-top: 1px;
+    border-bottom: 1px;
+    border-left: 0;
+    border-right: 0;
+    border-style: solid;
+    border-color: #c8c8c8;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    overflow-y: scroll;
+    height: 77%;
+    margin: 0 auto;
+    background-color: #f1ffea;
+}
+
+.chat-box-info {
+    height: 10%;
+    min-height: 60px;
+    margin: 0 auto;
+}
+
+.chat-box-info img {
+    margin: 5px 10px 0px 10px;
+}
+
+.chat-box-info span {
+    margin: 20px 10px 0px 10px;
+}
+
+.chat-box-input {
+    height: 13%;
+    min-height: 60px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.chat-box-input input {
+    font-family: inherit;
+    color: black;
+    padding: 12px 6px;
+    height: 65%;
+    display: table;
+    width: 90%;
+    font-size: 14px;
+    -webkit-transition-duration: 0.4s;
+    /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.chat-box-friend-name {
+    position: relative;
+    float: left;
+    color: black;
+    margin: 10px 10px;
+    font-size: 16px;
+}
+
+.chat-box-date {
+    display: table;
+    margin: 0 auto;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.chat-box-from-message {
+    float: left;
+    position: relative;
+    border: 1px solid #c8c8c8;
+    background-color: white;
+    padding: 10px 15px;
+}
+
+.chat-box-to-message {
+    border: 1px solid #c8c8c8;
+    background-color: white;
+    float: right;
+    position: relative;
+    padding: 10px 15px;
+    margin: 5px 5px;
+}
+
+.chat-box-time {
+    float: right;
+    position: relative;
+    padding: 10px 15px;
+    margin: 5px 5px;
+}
+
+.popup-box {
+    background-color: #004712;
+    position: absolute;
+    height: 80px;
+    width: 180px;
+}
+
+.popup-box span {
+    display: block;
+    text-align: center;
+    color: white;
+    padding-top: 10px;
+}
+
+.popup-box button {
+    font-family: inherit;
+    background-color: white;
+    border: none;
+    color: #004712;
+    padding: 6px 6px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 10px 0 10px 15px;
+    -webkit-transition-duration: 0.4s;
+    /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}

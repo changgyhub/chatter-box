@@ -1,0 +1,84 @@
+<html>
+
+<head>
+    <title>ChatterBox</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/mystyles.css"></link>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="/javascripts/myscripts.js"></script>
+</head>
+
+<body ng-app="chatterbox" ng-controller="chatterbox">
+    <div class="header">
+        <h1>Chatter Box</h1>
+        <img class="ng-hide" ng-src="{{user.icon}}" ng-click="show_user_info($event)" ng-show="state.main"></img>
+        <span class="ng-hide" ng-bind="user.name" ng-click="show_user_info($event)" ng-show="state.main"></span>
+        <button class="ng-hide" ng-click="log_out($event)" ng-show="state.main">Log out</button>
+    </div>
+
+    <div class="login-box ng-hide" ng-show="state.login">
+        <div><span ng-bind="login.error"></span></div>
+        <label>Username</label><input type="text" ng-model="login.username"><br>
+        <label>Password</label><input type="password" ng-model="login.password"><br>
+        <br>
+        <button ng-click="sign_in($event)">Sign in</button>
+    </div>
+
+    <div class="friend-panel ng-hide" ng-show="state.main">
+        <h2>Friends</h2>
+        <div ng-repeat="x in friends">
+            <span ng-bind="x.unread ? x.name + ' (' + x.unread + ')' : x.name" ng-click="load_conversation($event, $index)"></span>
+        </div>
+    </div>
+
+    <div class="main-panel ng-hide" ng-show="state.main">
+
+        <div class="user-info ng-hide" ng-show="state.info">
+            <img ng-src="{{user.icon}}"></img><br><br>
+            <span ng-bind="user.name"></span><br><br>
+            <div><span ng-bind="user.info_update_error"></span></div>
+            <label>Mobile Number</label><input type="text" ng-model="user.mobile_number"><br>
+            <label>Home Number</label><input type="text" ng-model="user.home_number"><br>
+            <label>Mailing Address</label><input type="text" ng-model="user.address"><br><br>
+            <button ng-click="save_user_info($event)">Save</button>
+        </div>
+
+        <div class="chat-box ng-hide" ng-show="state.chat">
+            <div class="chat-box-info">
+                <img ng-src="{{friend.icon}}"></img>
+                <span class="chat-box-friend-name" ng-bind="friend.name"></span><br><br><br>
+            </div>
+            <div class="chat-box-panel" id="autoscroll">
+                <div ng-repeat="message_groups in messages">
+                    <span class="chat-box-date" ng-bind="message_groups.date"></span><br><br>
+                    <div ng-repeat="message in message_groups.messages" ng-switch on="message.target">
+                        <div ng-switch-when="to">
+                            <span class="chat-box-time" ng-bind="message.time"></span>
+                            <span class="chat-box-to-message" ng-bind="message.message" ng-dblclick="show_delete_box($event, message._id, $parent.$parent.$index, $index)"></span><br><br>
+                        </div>
+                        <div ng-switch-when="from">
+                            <img ng-src="{{friend.icon}}"></img>
+                            <span class="chat-box-from-message" ng-bind="message.message"></span>
+                            <span class="chat-box-time" ng-bind="message.time"></span><br><br>
+                        </div>
+                        <br>
+                    </div>
+                    <br>
+                </div>
+            </div>
+            <div class="chat-box-input">
+                <input type="text" ng-model="msg_to_send" ng-enter="post_message($event)" placeholder="Type a message here">
+            </div>
+        </div>
+
+    </div>
+
+    <div class="popup-box ng-hide" ng-style="{left: popup_left, top: popup_top}" ng-show="state.delete">
+        <span>Delete the message?</span>
+        <button ng-click="hide_delete_box($event)">Cancel</button>
+        <button ng-click="delete_message($event)">&nbsp;&nbsp;OK&nbsp;&nbsp;</button>
+    </div>
+
+</body>
+
+</html>
