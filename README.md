@@ -1,4 +1,4 @@
-# chatter-box
+# Chatter Box
 A MEAN (MongoDB, Express.js, AngularJS, and Node.js) stack online chatting app.
 
 It allows you to chat with any friend using the app, with data stored in the cloud. Message can be recalled, and new message from friends will be noticed (just like Messgener or Wechat).
@@ -7,7 +7,7 @@ It allows you to chat with any friend using the app, with data stored in the clo
 * This is an assignment for HKU Course COMP3322 by Dr. Chuan Wu. The lecturer (and/or the tutors) owns the copyright of the assignment requirements.
 * The database and the design logic are based on the requirements of the assignment. In my point of view, the requirements (especially the function APIs and the database schema) are terrible and inefficient. Nevertheless, the program is fully functionable.
 
-### Set Up Guide:
+### Setup Guide:
 ```Bash
 sudo npm install -g express-generator
 mkdir data
