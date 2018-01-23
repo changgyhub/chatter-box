@@ -5,6 +5,7 @@ It allows you to chat with any friend using the app, with data stored in the clo
 
 ### Notes
 * This is an assignment for HKU Course COMP3322 by Dr. Chuan Wu. The lecturer (and/or the tutors) owns the copyright of the assignment requirements.
+* Do not copy contents of this repo for course assignments. You should take the responsibility for any form of plagiarism.
 * The database and the design logic are based on the requirements of the assignment. In my point of view, the requirements (especially the function APIs and the database schema) are terrible and inefficient. Nevertheless, the program is fully functional.
 
 ### Setup Guide:
